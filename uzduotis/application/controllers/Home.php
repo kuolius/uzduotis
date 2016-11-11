@@ -5,7 +5,7 @@ class Home extends CI_Controller {
     public function __construct(){
         
         parent::__construct();
-        $this->load->library(array('form_validation','session'));
+        $this->load->library(array('form_validation','session','Layout'));
         $this->load->helper(array('form','url'));
         $this->load->database();
        
@@ -48,7 +48,7 @@ class Home extends CI_Controller {
                 
  
             }
-            $this->load->view('home',$data);
+            $this->layout->view('home',$data);
         }
         else{
             redirect('/account/login');
@@ -59,7 +59,7 @@ class Home extends CI_Controller {
     function check_completed(){
         if($this->session->userdata('role')!="user")
         {
-            $this->load->view('home');
+            $this->layout->view('home');
         }
         else
         {
@@ -79,12 +79,12 @@ class Home extends CI_Controller {
     function create(){
         if($this->session->userdata('role')!="admin")
         {
-            $this->load->view('home');
+            $this->layout->view('home');
         }
         else
         {
             $data['pages']=$this->input->get('pages');
-            $this->load->view('create',$data);
+            $this->layout->view('create',$data);
         }
     }
 
@@ -115,7 +115,7 @@ class Home extends CI_Controller {
        
         $description=$this->db->where('id',$id)->select('description')->get('task')->result_array();
         $data=array('description' =>$description[0]['description'],'id'=>$id,'page'=>$this->input->get('page'));
-        $this->load->view('edit',$data);
+        $this->layout->view('edit',$data);
         }
     }
 
@@ -139,7 +139,7 @@ class Home extends CI_Controller {
             $data['id']=$id;
             $data['page']=$this->input->get('page');
             $data['description']=$description[0]['description']; 
-            $this->load->view('assign',$data);
+            $this->layout->view('assign',$data);
         }
     }
 
@@ -154,7 +154,7 @@ class Home extends CI_Controller {
             $data['id']=$this->input->post('id');
             $data['description']=$this->input->post('description');
             $data['page']=$this->input->post('page');
-            $this->load->view("assign",$data);
+            $this->layout->view("assign",$data);
         }
         else
         {

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
 
-<html>
-    <head>
-        <meta http-equiv="content-type" value="text/html; charset=ISO-8859-1">
-        <title></title>
-        <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
-    </head>
-    <body>
         <?php if($role=="user"){  ?>
         
         <?php echo form_open('home/check_completed'); ?>
@@ -113,7 +105,4 @@
             </ul>
         </nav>
         
-    </body>
-    <script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.10.2.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-</html>
+    

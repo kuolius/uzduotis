@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
-    </head>
-    <body>
-        <?php echo form_open('Account/register',array('class'=>'form-horizontal')); ?>
+
+        <?php echo form_open('Account/register',array('class'=>'form-horizontal','id'=>'signupForm')); ?>
         
         <div class="form-group">
             <label for="username" class="col-sm-2 control-label">Username</label>
@@ -37,8 +30,5 @@
             
             <p>Already have an account? Click <?php echo anchor('account/login','Login'); ?></p>
         </div>
-        
-    </body>
-    <script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.10.2.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-</html>
+        <?php echo form_close(); ?>
+  

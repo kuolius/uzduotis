@@ -1,15 +1,6 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Login</title>
-<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
-</head>
-<body>
+
     
-    <?php echo form_open('account/login',array('class'=>'form-horizontal')); ?>
+    <?php echo form_open('account/login',array('class'=>'form-horizontal','id'=>'signinForm')); ?>
     
     <div class="form-group">
         <label for="username" class="col-sm-2 control-label">Username</label>
@@ -28,11 +19,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div class="col-sm-offset-2"> 
    <input class="btn btn-default" type="submit" name="submit" value="Login" /> 
-    
     <p>Don't have an account? Click <?php echo anchor('account/register','Register'); ?></p>
     </div>
+    <?php echo form_close(); ?>
+
    
-</body>
-<script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.10.2.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-</html>

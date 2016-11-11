@@ -1,12 +1,4 @@
-<!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
-    </head>
-    <body>
         <?php echo form_open('home/new_task',array('class'=>'form-horizontal'));?>
         
         <div class="form-group">
@@ -18,10 +10,8 @@
         <input type="hidden" name="pages" value="<?php echo $pages; ?>"/>
         <div class="col-sm-offset-2">
             <input type="submit" name="submit" class="btn btn-default" value="Create Task" />
+            <input type="button" class="btn btn-default" value="back" onclick="window.location.assign('<?php echo site_url(array('home','index')); ?>')" />
         </div>
         
         <?php echo form_close(); ?>
-    </body>
-    <script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.10.2.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-</html>
+   

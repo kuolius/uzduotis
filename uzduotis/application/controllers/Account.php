@@ -6,9 +6,10 @@ class Account extends CI_Controller {
     public function __construct(){
         
         parent::__construct();
-        $this->load->library(array('form_validation','session'));
+        $this->load->library(array('form_validation','session','Layout'));
         $this->load->helper(array('url','form'));
         $this->load->model('User_model');
+        
     }
     
     public function index()
@@ -24,8 +25,8 @@ class Account extends CI_Controller {
         }
         else{
             
-        $this->load->view('login');
-        
+       
+        $this->layout->view('login');
         }
 
     }
@@ -55,7 +56,7 @@ class Account extends CI_Controller {
         
         if($this->form_validation->run()==FALSE)
         {
-            $this->load->view('login');
+            $this->layout->view('login');
         }
         else
         {
@@ -100,7 +101,7 @@ class Account extends CI_Controller {
         $this->form_validation->set_rules('password_conf','Password Confirmation','required|matches[password]');
         if($this->form_validation->run()==FALSE)
         {
-            $this->load->view('register');
+            $this->layout->view('register');
         }
         else
         {
@@ -114,7 +115,7 @@ class Account extends CI_Controller {
             }
             else
             {
-                $this->load->view('errors/index');
+                $this->layout->view('errors/index');
             }
         }
     }
